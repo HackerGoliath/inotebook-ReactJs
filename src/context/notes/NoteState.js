@@ -2,178 +2,84 @@ import noteContext from "./noteContext";
 import { useState } from "react";
 
 const NoteState = (props) => {
-    const notesInitial = [
-        {
-            "_id": "63c7d94463e55b172871ae51",
-            "user": "63c691c43d724204a5073954",
-            "title": "Take Lunch",
-            "description": "Please take Lunch",
-            "tag": "personal",
-            "date": "2023-01-18T11:34:28.350Z",
-            "__v": 0
-        },
-        {
-            "_id": "63c7d96563e55b172871ae53",
-            "user": "63c691c43d724204a5073954",
-            "title": "Playlist",
-            "description": "Please access playlist",
-            "tag": "YouTube",
-            "date": "2023-01-18T11:35:01.454Z",
-            "__v": 0
-        },
-        {
-            "_id": "63c7d94463e55b172871ae51",
-            "user": "63c691c43d724204a5073954",
-            "title": "Take Lunch",
-            "description": "Please take Lunch",
-            "tag": "personal",
-            "date": "2023-01-18T11:34:28.350Z",
-            "__v": 0
-        },
-        {
-            "_id": "63c7d96563e55b172871ae53",
-            "user": "63c691c43d724204a5073954",
-            "title": "Playlist",
-            "description": "Please access playlist",
-            "tag": "YouTube",
-            "date": "2023-01-18T11:35:01.454Z",
-            "__v": 0
-        },
-        {
-            "_id": "63c7d94463e55b172871ae51",
-            "user": "63c691c43d724204a5073954",
-            "title": "Take Lunch",
-            "description": "Please take Lunch",
-            "tag": "personal",
-            "date": "2023-01-18T11:34:28.350Z",
-            "__v": 0
-        },
-        {
-            "_id": "63c7d96563e55b172871ae53",
-            "user": "63c691c43d724204a5073954",
-            "title": "Playlist",
-            "description": "Please access playlist",
-            "tag": "YouTube",
-            "date": "2023-01-18T11:35:01.454Z",
-            "__v": 0
-        },
-        {
-            "_id": "63c7d94463e55b172871ae51",
-            "user": "63c691c43d724204a5073954",
-            "title": "Take Lunch",
-            "description": "Please take Lunch",
-            "tag": "personal",
-            "date": "2023-01-18T11:34:28.350Z",
-            "__v": 0
-        },
-        {
-            "_id": "63c7d96563e55b172871ae53",
-            "user": "63c691c43d724204a5073954",
-            "title": "Playlist",
-            "description": "Please access playlist",
-            "tag": "YouTube",
-            "date": "2023-01-18T11:35:01.454Z",
-            "__v": 0
-        },
-        {
-            "_id": "63c7d94463e55b172871ae51",
-            "user": "63c691c43d724204a5073954",
-            "title": "Take Lunch",
-            "description": "Please take Lunch",
-            "tag": "personal",
-            "date": "2023-01-18T11:34:28.350Z",
-            "__v": 0
-        },
-        {
-            "_id": "63c7d96563e55b172871ae53",
-            "user": "63c691c43d724204a5073954",
-            "title": "Playlist",
-            "description": "Please access playlist",
-            "tag": "YouTube",
-            "date": "2023-01-18T11:35:01.454Z",
-            "__v": 0
-        },
-        {
-            "_id": "63c7d94463e55b172871ae51",
-            "user": "63c691c43d724204a5073954",
-            "title": "Take Lunch",
-            "description": "Please take Lunch",
-            "tag": "personal",
-            "date": "2023-01-18T11:34:28.350Z",
-            "__v": 0
-        },
-        {
-            "_id": "63c7d96563e55b172871ae53",
-            "user": "63c691c43d724204a5073954",
-            "title": "Playlist",
-            "description": "Please access playlist",
-            "tag": "YouTube",
-            "date": "2023-01-18T11:35:01.454Z",
-            "__v": 0
-        },
-        {
-            "_id": "63c7d94463e55b172871ae51",
-            "user": "63c691c43d724204a5073954",
-            "title": "Take Lunch",
-            "description": "Please take Lunch",
-            "tag": "personal",
-            "date": "2023-01-18T11:34:28.350Z",
-            "__v": 0
-        },
-        {
-            "_id": "63c7d96563e55b172871ae53",
-            "user": "63c691c43d724204a5073954",
-            "title": "Playlist",
-            "description": "Please access playlist",
-            "tag": "YouTube",
-            "date": "2023-01-18T11:35:01.454Z",
-            "__v": 0
-        },
-        {
-            "_id": "63c7d94463e55b172871ae51",
-            "user": "63c691c43d724204a5073954",
-            "title": "Take Lunch",
-            "description": "Please take Lunch",
-            "tag": "personal",
-            "date": "2023-01-18T11:34:28.350Z",
-            "__v": 0
-        },
-        {
-            "_id": "63c7d96563e55b172871ae53",
-            "user": "63c691c43d724204a5073954",
-            "title": "Playlist",
-            "description": "Please access playlist",
-            "tag": "YouTube",
-            "date": "2023-01-18T11:35:01.454Z",
-            "__v": 0
-        },
-        {
-            "_id": "63c7d94463e55b172871ae51",
-            "user": "63c691c43d724204a5073954",
-            "title": "Take Lunch",
-            "description": "Please take Lunch",
-            "tag": "personal",
-            "date": "2023-01-18T11:34:28.350Z",
-            "__v": 0
-        },
-        {
-            "_id": "63c7d96563e55b172871ae53",
-            "user": "63c691c43d724204a5073954",
-            "title": "Playlist",
-            "description": "Please access playlist",
-            "tag": "YouTube",
-            "date": "2023-01-18T11:35:01.454Z",
-            "__v": 0
-        },
-    ]
+    const host = "http://localhost:5000"
+    const notesInitial = []
+
     const [notes, setNotes] = useState(notesInitial)
 
+    // Get all Notes
+    const getNotes = async () => {
+        // API Call
+        const response = await fetch(`${host}/api/notes/fetchallnotes`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNjNjkxYzQzZDcyNDIwNGE1MDczOTU0In0sImlhdCI6MTY3NDAzNDE2M30.tQWN7Pw2KNHfOrOdwJzZbCPk73c-XyTPQ84oVkdy53Q'
+            },
+        });
+        const json = await response.json()
+        setNotes(json)
+    }
+    // Add a Note
+    const addNote = async (title, description, tag) => {
+        // TODO: API Call
+        const response = await fetch(`${host}/api/notes/addnote`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNjNjkxYzQzZDcyNDIwNGE1MDczOTU0In0sImlhdCI6MTY3NDAzNDE2M30.tQWN7Pw2KNHfOrOdwJzZbCPk73c-XyTPQ84oVkdy53Q'
+            },
+            body: JSON.stringify({ title, description, tag })
+        });
+        const note = await response.json();
+        setNotes(notes.concat(note))
+    }
+    // Delete a Note
+    const deleteNote = async (id) => {
+        // API Call
+        const response = await fetch(`${host}/api/notes/deletenote/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNjNjkxYzQzZDcyNDIwNGE1MDczOTU0In0sImlhdCI6MTY3NDAzNDE2M30.tQWN7Pw2KNHfOrOdwJzZbCPk73c-XyTPQ84oVkdy53Q'
+            },
+        });
+        const json = response.json();
+        const newNotes = notes.filter((note) => { return note._id !== id })
+        setNotes(newNotes)
+    }
+    // Edit a Note
+    const editNote = async (id, title, description, tag) => {
+        // API Call
+        const response = await fetch(`${host}/api/notes/updatenote/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNjNjkxYzQzZDcyNDIwNGE1MDczOTU0In0sImlhdCI6MTY3NDAzNDE2M30.tQWN7Pw2KNHfOrOdwJzZbCPk73c-XyTPQ84oVkdy53Q'
+            },
+            body: JSON.stringify({ title, description, tag })
+        });
+        const json = await response.json();
+
+        let newNotes = JSON.parse(JSON.stringify(notes))
+        // Logic to edit in client
+        for (let index = 0; index < newNotes.length; index++) {
+            const element = newNotes[index];
+            if (element._id === id) {
+                newNotes[index].title = title;
+                newNotes[index].description = description;
+                newNotes[index].tag = tag;
+                break;
+            }
+        }
+        setNotes(newNotes)
+    }
     return (
         // state,update is same as : state:state update:update
-        <noteContext.Provider value={{ notes, setNotes }}>
+        <noteContext.Provider value={{ notes, addNote, deleteNote, editNote, getNotes }}>
             {props.children}
         </noteContext.Provider>
     )
-}
 
+}
 export default NoteState;
